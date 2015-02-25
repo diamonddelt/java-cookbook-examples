@@ -1,0 +1,38 @@
+<!-- this is an auto-generated build.xml file from NetBeans and Ant -->
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="AntBuildExample" default="compile" basedir=".">
+    <description>
+        Builds, tests, and runs the project AntBuildExample.
+        Example instruction provided by Java Cookbook 2nd Ed.
+    </description>
+    <import file="nbproject/build-impl.xml"/>
+    
+    <!-- set global properties for this build -->
+    <property name="src" value="." />
+    <property name="build" value="build" />
+    
+    <!-- specify the compiler to use -->
+    <property name="build.compiler" value="modern" />
+    
+    <!-- init target is initialized first in the build process -->
+    <target name="init">
+        <!-- creates the time stamp of the build -->
+        <tstamp>
+            <format property="TODAY" 
+                    pattern="hh-mm-ss E dd-M-yyyy"
+                    locale="en" />
+        </tstamp>
+        
+        <!-- creates the build directory structure used to compile -->
+        <mkdir dir="${build}" />
+    </target>
+    
+    <!-- specify what to compile. this builds everything -->
+    <target name="compile" depends="init">
+        
+        <!-- compile the java code from ${src} into ${build} -->
+        <!-- the "${}" wrapper means a directory -->
+        <javac srcdir="${src}" destdir="${build}" />
+    </target>
+    
+</project>
